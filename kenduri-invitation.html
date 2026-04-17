@@ -1,0 +1,3697 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover"
+    />
+    <title>Wedding Invitation | Sarah &amp; James</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cinzel:wght@400;500&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ════════════════════════════════
+   TOKENS
+════════════════════════════════ */
+      :root {
+        --w: #ffffff;
+        --g0: #fdfbf7;
+        --g1: #f7f2ea;
+        --g2: #ede4d0;
+        --gold: #b89a2e;
+        --gold2: #d4b44a;
+        --goldf: #c8a840;
+        --golddim: rgba(184, 154, 46, 0.35);
+        --goldpale: #f5edcc;
+        --txt: #1a150a;
+        --txts: #5a4a2a;
+        --txtt: #8a7a5a;
+        --nb-h: 68px;
+        --safe: env(safe-area-inset-bottom, 0px);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html {
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        font-family: "Cormorant Garamond", serif;
+        background: var(--w);
+        color: var(--txt);
+        min-height: 100dvh;
+        overflow-x: hidden;
+        padding-bottom: calc(var(--nb-h) + var(--safe));
+      }
+
+      /* ════════════════════════════════
+   MARBLE BACKGROUND
+════════════════════════════════ */
+      #mbg {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background: var(--w);
+        overflow: hidden;
+      }
+      #mbg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 90% 50% at 15% 20%,
+            rgba(212, 180, 74, 0.09) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse 70% 60% at 85% 75%,
+            rgba(212, 180, 74, 0.07) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse 50% 40% at 50% 50%,
+            rgba(245, 237, 204, 0.4) 0%,
+            transparent 70%
+          );
+      }
+
+      /* ════════════════════════════════
+   FLORAL CORNERS
+════════════════════════════════ */
+      .fc {
+        position: fixed;
+        z-index: 1;
+        pointer-events: none;
+        width: clamp(110px, 25vw, 190px);
+      }
+      .fc.tl {
+        top: 0;
+        left: 0;
+      }
+      .fc.tr {
+        top: 0;
+        right: 0;
+        transform: scaleX(-1);
+      }
+      .fc.bl {
+        bottom: calc(var(--nb-h) + var(--safe));
+        left: 0;
+        transform: scaleY(-1);
+      }
+      .fc.br {
+        bottom: calc(var(--nb-h) + var(--safe));
+        right: 0;
+        transform: scale(-1, -1);
+      }
+      .fc svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* ════════════════════════════════
+   INTRO  — WHITE GOLD MARBLE
+════════════════════════════════ */
+      #intro {
+        position: fixed;
+        inset: 0;
+        z-index: 9000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background: var(--w);
+        overflow: hidden;
+        transition:
+          opacity 0.85s ease,
+          transform 0.85s ease;
+      }
+      #intro::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            ellipse 80% 50% at 20% 25%,
+            rgba(212, 180, 74, 0.13) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse 60% 60% at 80% 70%,
+            rgba(212, 180, 74, 0.1) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse 100% 30% at 50% 100%,
+            rgba(212, 180, 74, 0.08) 0%,
+            transparent 60%
+          );
+      }
+      /* intro marble veins */
+      #intro::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'%3E%3Cpath d='M0,200 Q150,160 280,200 T550,180 T800,220' stroke='rgba(184,154,46,0.13)' stroke-width='1.5' fill='none'/%3E%3Cpath d='M0,380 Q200,340 380,390 T700,360 T800,400' stroke='rgba(184,154,46,0.09)' stroke-width='1' fill='none'/%3E%3Cpath d='M200,0 Q230,200 200,400 Q170,600 210,800' stroke='rgba(184,154,46,0.08)' stroke-width='1' fill='none'/%3E%3Cpath d='M600,0 Q620,200 590,400 Q560,600 600,800' stroke='rgba(184,154,46,0.07)' stroke-width='1' fill='none'/%3E%3Cpath d='M0,580 Q180,540 350,580 T700,560' stroke='rgba(184,154,46,0.1)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+        background-size: cover;
+        opacity: 0.7;
+      }
+      #intro.hide {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(1.03);
+      }
+
+      /* intro envelope — gold on white */
+      .ienv {
+        position: relative;
+        z-index: 1;
+        width: clamp(180px, 48vw, 250px);
+        height: clamp(126px, 34vw, 175px);
+        margin-bottom: 36px;
+        animation: ifl 3.2s ease-in-out infinite;
+        filter: drop-shadow(0 12px 32px rgba(184, 154, 46, 0.22))
+          drop-shadow(0 4px 10px rgba(184, 154, 46, 0.15));
+      }
+      @keyframes ifl {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+      .ienv-body {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          145deg,
+          #f5edcc 0%,
+          var(--w) 40%,
+          #f0e4b0 100%
+        );
+        border-radius: 4px;
+        border: 1px solid rgba(184, 154, 46, 0.4);
+        box-shadow:
+          inset 0 1px 2px rgba(255, 255, 255, 0.9),
+          0 2px 8px rgba(184, 154, 46, 0.12);
+      }
+      .ienv-sl {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 51%;
+        height: 58%;
+        background: linear-gradient(130deg, #e8d888, #f0e4b0);
+        clip-path: polygon(0 0, 0 100%, 100% 100%);
+        border-radius: 0 0 0 4px;
+      }
+      .ienv-sr {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 51%;
+        height: 58%;
+        background: linear-gradient(230deg, #e8d888, #f0e4b0);
+        clip-path: polygon(100% 0, 0 100%, 100% 100%);
+        border-radius: 0 0 4px 0;
+      }
+      .ienv-tp {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 54%;
+        background: linear-gradient(165deg, #f0e4b0, #e8d888);
+        clip-path: polygon(0 0, 50% 56%, 100% 0);
+        transform-origin: top center;
+        animation: ifw 2.8s ease-in-out 0.4s infinite alternate;
+        border-top: 1px solid rgba(184, 154, 46, 0.35);
+      }
+      @keyframes ifw {
+        0% {
+          transform: rotateX(0deg);
+        }
+        100% {
+          transform: rotateX(-38deg);
+        }
+      }
+      .ienv-seal {
+        position: absolute;
+        top: 52%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 38% 32%, #e8d070, #b89a2e);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Great Vibes", cursive;
+        font-size: 19px;
+        color: var(--w);
+        box-shadow:
+          0 3px 10px rgba(184, 154, 46, 0.4),
+          inset 0 1px 2px rgba(255, 255, 255, 0.3);
+        letter-spacing: -1px;
+      }
+
+      .inames {
+        position: relative;
+        z-index: 1;
+        font-family: "Great Vibes", cursive;
+        font-size: clamp(1.9rem, 7vw, 3rem);
+        color: var(--gold);
+        text-align: center;
+        margin-bottom: 6px;
+        text-shadow: 0 1px 8px rgba(184, 154, 46, 0.2);
+      }
+      .isub {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel", serif;
+        color: var(--txts);
+        font-size: clamp(0.58rem, 0.8vw, 0.75rem);
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .itap {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel", serif;
+        color: var(--goldf);
+        font-size: 0.66rem;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        animation: itb 1.7s ease-in-out infinite;
+      }
+      @keyframes itb {
+        0%,
+        100% {
+          opacity: 0.45;
+          transform: translateY(0);
+        }
+        50% {
+          opacity: 1;
+          transform: translateY(5px);
+        }
+      }
+
+      /* intro floral */
+      .ifl-tl {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: none;
+        width: clamp(100px, 22vw, 175px);
+      }
+      .ifl-tr {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        pointer-events: none;
+        width: clamp(100px, 22vw, 175px);
+        transform: scaleX(-1);
+      }
+      .ifl-bl {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: none;
+        width: clamp(100px, 22vw, 175px);
+        transform: scaleY(-1);
+      }
+      .ifl-br {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        pointer-events: none;
+        width: clamp(100px, 22vw, 175px);
+        transform: scale(-1, -1);
+      }
+
+      /* ════════════════════════════════
+   MUSIC BTN
+════════════════════════════════ */
+      #musicbtn {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        z-index: 8000;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: var(--w);
+        border: 1px solid var(--golddim);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(184, 154, 46, 0.15);
+        transition: all 0.25s;
+      }
+      #musicbtn:hover {
+        background: var(--goldpale);
+      }
+      #musicbtn svg {
+        width: 18px;
+        height: 18px;
+      }
+      #musicbtn.playing .note-off {
+        display: none;
+      }
+      #musicbtn:not(.playing) .note-on {
+        display: none;
+      }
+
+      /* ════════════════════════════════
+   MAIN PAGE
+════════════════════════════════ */
+      #page {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* ════════════════════════════════
+   HERO
+════════════════════════════════ */
+      .hero {
+        text-align: center;
+        padding: clamp(52px, 11vw, 88px) 0 32px;
+      }
+      .hero-orn {
+        font-family: "Cinzel", serif;
+        color: var(--gold2);
+        font-size: clamp(0.6rem, 0.85vw, 0.76rem);
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        opacity: 0.75;
+      }
+      .hero-names {
+        font-family: "Great Vibes", cursive;
+        font-size: clamp(3rem, 13vw, 5.5rem);
+        line-height: 1;
+        background: linear-gradient(
+          150deg,
+          #7a6010 0%,
+          #c8a840 40%,
+          #b89a2e 70%,
+          #8a7020 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0 1px 4px rgba(184, 154, 46, 0.15));
+      }
+      .hero-amp {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: clamp(1rem, 3.5vw, 1.6rem);
+        background: linear-gradient(135deg, #9a7a30, #c8a840);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 2px 0;
+      }
+      .hero-tagline {
+        margin-top: 20px;
+        font-family: "Cinzel", serif;
+        display: inline-block;
+        padding: 9px 22px;
+        border: 1px solid var(--golddim);
+        border-radius: 40px;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(6px);
+        color: var(--gold);
+        font-size: clamp(0.62rem, 1.1vw, 0.78rem);
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+      .hero-venue {
+        margin-top: 8px;
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        color: var(--txts);
+        font-size: clamp(0.88rem, 2vw, 1rem);
+      }
+
+      /* GOLD RULE */
+      .rule {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 340px;
+        margin: 28px auto;
+        color: var(--gold2);
+      }
+      .rule::before,
+      .rule::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--gold2),
+          transparent
+        );
+      }
+      .rule span {
+        font-size: 0.85rem;
+        flex-shrink: 0;
+        opacity: 0.8;
+      }
+
+      /* ════════════════════════════════
+   COUNTDOWN
+════════════════════════════════ */
+      .cds {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+      .cds-lbl {
+        font-family: "Cinzel", serif;
+        font-size: 0.62rem;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--txtt);
+        margin-bottom: 14px;
+      }
+      .cds-row {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+      .cds-box {
+        flex: 1;
+        max-width: 82px;
+        background: var(--w);
+        border: 1px solid var(--golddim);
+        border-radius: 12px;
+        padding: 14px 6px 12px;
+        box-shadow:
+          0 2px 14px rgba(184, 154, 46, 0.1),
+          inset 0 1px 2px rgba(255, 255, 255, 0.9);
+      }
+      .cds-n {
+        display: block;
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.5rem, 5.5vw, 2rem);
+        color: var(--gold);
+        line-height: 1;
+      }
+      .cds-u {
+        display: block;
+        font-size: clamp(0.5rem, 0.72vw, 0.6rem);
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--txtt);
+        margin-top: 5px;
+      }
+
+      /* ════════════════════════════════
+   INVITATION CARD (MAIN PAGE)
+════════════════════════════════ */
+      .inv-card {
+        background: var(--w);
+        border: 1px solid var(--golddim);
+        border-radius: 16px;
+        padding: clamp(24px, 6vw, 40px);
+        text-align: center;
+        box-shadow:
+          0 4px 24px rgba(184, 154, 46, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        margin-bottom: 32px;
+        position: relative;
+        overflow: hidden;
+      }
+      .inv-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--gold2),
+          var(--goldf),
+          var(--gold2),
+          transparent
+        );
+      }
+      .inv-greet {
+        font-style: italic;
+        color: var(--gold);
+        font-size: 0.95rem;
+        line-height: 1.9;
+        margin-bottom: 18px;
+      }
+      .inv-parents {
+        font-size: 0.88rem;
+        color: var(--txts);
+        line-height: 2;
+        margin-bottom: 20px;
+      }
+      .inv-intro {
+        font-size: 0.88rem;
+        color: var(--txts);
+        font-style: italic;
+        margin-bottom: 16px;
+      }
+      .inv-sep {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 6px 0;
+        color: var(--gold);
+        font-size: 0.7rem;
+      }
+      .inv-sep::before,
+      .inv-sep::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(184, 154, 46, 0.3),
+          transparent
+        );
+      }
+      .inv-bride,
+      .inv-groom {
+        font-family: "Cinzel", serif;
+        font-size: clamp(0.95rem, 2.8vw, 1.15rem);
+        color: var(--txt);
+        display: block;
+      }
+      .inv-amp-big {
+        font-family: "Great Vibes", cursive;
+        font-size: 2rem;
+        color: var(--gold);
+        display: block;
+        margin: 4px 0;
+      }
+      .inv-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 24px 0;
+        text-align: center;
+      }
+      .inv-detail-full {
+        grid-column: 1/-1;
+      }
+      .inv-det {
+        padding: 14px 10px;
+        background: var(--g0);
+        border: 1px solid rgba(184, 154, 46, 0.18);
+        border-radius: 10px;
+      }
+      .inv-det-lbl {
+        font-family: "Cinzel", serif;
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 5px;
+        display: block;
+      }
+      .inv-det-val {
+        font-size: 0.88rem;
+        line-height: 1.6;
+        color: var(--txt);
+      }
+      .prog-lbl {
+        font-family: "Cinzel", serif;
+        font-size: 0.6rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 10px;
+      }
+      .prog-t {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .prog-t tr {
+        border-bottom: 1px solid rgba(184, 154, 46, 0.1);
+      }
+      .prog-t tr:last-child {
+        border-bottom: none;
+      }
+      .prog-t td {
+        padding: 9px 6px;
+        font-size: 0.84rem;
+        text-align: left;
+      }
+      .prog-t td:first-child {
+        color: var(--gold);
+        font-family: "Cinzel", serif;
+        font-size: 0.68rem;
+        white-space: nowrap;
+        width: 80px;
+      }
+      .inv-close-txt {
+        font-style: italic;
+        color: var(--txts);
+        font-size: 0.85rem;
+        margin-top: 18px;
+        line-height: 1.8;
+      }
+
+      /* ════════════════════════════════
+   GALLERY STRIP
+════════════════════════════════ */
+      .gal-lbl {
+        font-family: "Cinzel", serif;
+        font-size: 0.6rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--txtt);
+        text-align: center;
+        margin-bottom: 12px;
+      }
+      .gal-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        margin-bottom: 32px;
+      }
+      .gal-item {
+        aspect-ratio: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid rgba(184, 154, 46, 0.15);
+      }
+      .gal-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .gal-item:hover img,
+      .gal-item:active img {
+        transform: scale(1.07);
+      }
+
+      /* ════════════════════════════════
+   PAGE FOOTER
+════════════════════════════════ */
+      .pfooter {
+        text-align: center;
+        padding: 8px 0 20px;
+      }
+      .pfooter-hash {
+        font-family: "Cinzel", serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        color: var(--gold);
+        margin-bottom: 6px;
+      }
+      .pfooter-script {
+        font-family: "Great Vibes", cursive;
+        font-size: 1.3rem;
+        color: var(--txts);
+      }
+
+      /* ════════════════════════════════
+   BOTTOM NAV
+════════════════════════════════ */
+      #bnav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 4000;
+        height: calc(var(--nb-h) + var(--safe));
+        padding-bottom: var(--safe);
+        background: var(--w);
+        border-top: 1px solid rgba(184, 154, 46, 0.2);
+        box-shadow: 0 -4px 20px rgba(184, 154, 46, 0.1);
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        padding-top: 8px;
+      }
+      .nb-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px 2px;
+        border: none;
+        background: none;
+        font-family: inherit;
+        position: relative;
+        transition: all 0.2s;
+      }
+      .nb-item::after {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: var(--gold);
+        border-radius: 1px;
+        transition: width 0.25s ease;
+      }
+      .nb-item:hover::after,
+      .nb-item.active::after {
+        width: 24px;
+      }
+      .nb-icon {
+        width: 22px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s;
+      }
+      .nb-item:hover .nb-icon,
+      .nb-item.active .nb-icon {
+        transform: translateY(-1px);
+      }
+      .nb-item.active .nb-icon svg {
+        stroke: var(--gold);
+      }
+      .nb-lbl {
+        font-family: "Cinzel", serif;
+        font-size: 0.5rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--txtt);
+        transition: color 0.2s;
+      }
+      .nb-item:hover .nb-lbl,
+      .nb-item.active .nb-lbl {
+        color: var(--gold);
+      }
+
+      /* ════════════════════════════════
+   POPUP SYSTEM
+════════════════════════════════ */
+      .pover {
+        position: fixed;
+        inset: 0;
+        z-index: 5000;
+        background: rgba(250, 247, 240, 0.6);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+      .pover.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .psheet {
+        width: 100%;
+        max-width: 600px;
+        background: var(--w);
+        border-radius: 20px 20px 0 0;
+        max-height: 88dvh;
+        overflow-y: auto;
+        transform: translateY(100%);
+        transition: transform 0.38s cubic-bezier(0.3, 0.7, 0, 1);
+        border-top: 1px solid rgba(184, 154, 46, 0.2);
+        box-shadow: 0 -8px 40px rgba(184, 154, 46, 0.15);
+        padding-bottom: calc(var(--nb-h) + var(--safe) + 8px);
+        position: relative;
+      }
+      .psheet::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--gold2),
+          var(--goldf),
+          var(--gold2),
+          transparent
+        );
+        border-radius: 20px 20px 0 0;
+      }
+      /* marble inside popup */
+      .psheet::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background:
+          radial-gradient(
+            ellipse 70% 30% at 90% 5%,
+            rgba(212, 180, 74, 0.05) 0%,
+            transparent 65%
+          ),
+          radial-gradient(
+            ellipse 40% 20% at 5% 90%,
+            rgba(212, 180, 74, 0.04) 0%,
+            transparent 65%
+          );
+        border-radius: inherit;
+      }
+      .pover.open .psheet {
+        transform: translateY(0);
+      }
+      .phdl {
+        width: 36px;
+        height: 3px;
+        background: rgba(184, 154, 46, 0.25);
+        border-radius: 2px;
+        margin: 14px auto 0;
+      }
+      .pinner {
+        padding: 20px 22px 28px;
+        position: relative;
+        z-index: 1;
+      }
+      .ptitle {
+        font-family: "Cinzel", serif;
+        font-size: 0.92rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--txt);
+        text-align: center;
+        margin-bottom: 4px;
+      }
+      .psubt {
+        text-align: center;
+        font-style: italic;
+        color: var(--txts);
+        font-size: 0.88rem;
+        margin-bottom: 22px;
+      }
+      .pdiv {
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--gold2),
+          transparent
+        );
+        margin: 14px 0 20px;
+      }
+      .pcls {
+        position: absolute;
+        top: 16px;
+        right: 18px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--g0);
+        border: 1px solid rgba(184, 154, 46, 0.2);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        font-size: 0.85rem;
+        color: var(--txts);
+        transition: all 0.2s;
+      }
+      .pcls:hover {
+        background: var(--goldpale);
+      }
+
+      /* ════════════════════════════════
+   FORMS
+════════════════════════════════ */
+      .ff {
+        margin-bottom: 15px;
+      }
+      .ff label {
+        display: block;
+        font-family: "Cinzel", serif;
+        font-size: 0.6rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--txts);
+        margin-bottom: 6px;
+      }
+      .ff input,
+      .ff select,
+      .ff textarea {
+        width: 100%;
+        padding: 11px 14px;
+        background: var(--g0);
+        border: 1px solid rgba(184, 154, 46, 0.28);
+        border-radius: 8px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.96rem;
+        color: var(--txt);
+        outline: none;
+        transition: border-color 0.22s;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+      .ff input:focus,
+      .ff select:focus,
+      .ff textarea:focus {
+        border-color: var(--gold);
+      }
+      .ff textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+      .fr2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .rtog {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+      .rtbtn {
+        flex: 1;
+        padding: 11px 6px;
+        border: 1px solid rgba(184, 154, 46, 0.32);
+        background: var(--g0);
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: "Cinzel", serif;
+        font-size: 0.66rem;
+        letter-spacing: 0.1em;
+        color: var(--txt);
+        transition: all 0.25s;
+        font-family: inherit;
+      }
+      .rtbtn.active {
+        background: var(--txt);
+        border-color: var(--txt);
+        color: #fff;
+      }
+      .bgold {
+        width: 100%;
+        padding: 14px;
+        margin-top: 6px;
+        background: linear-gradient(135deg, #8a7018, var(--goldf), #9a8020);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-family: "Cinzel", serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.28s;
+        box-shadow: 0 3px 14px rgba(184, 154, 46, 0.28);
+      }
+      .bgold:hover {
+        box-shadow: 0 5px 20px rgba(184, 154, 46, 0.38);
+        transform: translateY(-1px);
+      }
+      .bgold:active {
+        transform: translateY(0);
+      }
+      .smsg {
+        background: linear-gradient(135deg, #f9fef9, #e8f5e8);
+        border: 1px solid rgba(100, 180, 100, 0.4);
+        border-radius: 8px;
+        padding: 11px 14px;
+        color: #2d6e2d;
+        font-size: 0.85rem;
+        margin-top: 10px;
+        display: none;
+        text-align: center;
+      }
+      .smsg.show {
+        display: block;
+        animation: fadeup 0.35s ease;
+      }
+      @keyframes fadeup {
+        from {
+          opacity: 0;
+          transform: translateY(4px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ════════════════════════════════
+   GUESTBOOK
+════════════════════════════════ */
+      .gcard {
+        padding: 14px 16px;
+        background: var(--g0);
+        border-radius: 10px;
+        border-left: 2px solid var(--gold2);
+        margin-bottom: 10px;
+        animation: fadeup 0.35s ease;
+      }
+      .gntag {
+        font-family: "Cinzel", serif;
+        font-size: 0.64rem;
+        letter-spacing: 0.14em;
+        color: var(--gold);
+        margin-bottom: 4px;
+      }
+      .gmsg {
+        font-style: italic;
+        font-size: 0.88rem;
+        line-height: 1.65;
+        color: var(--txt);
+      }
+      .gtim {
+        font-size: 0.68rem;
+        color: #bbb;
+        margin-top: 5px;
+      }
+
+      /* ════════════════════════════════
+   CONTACT
+════════════════════════════════ */
+      .clist {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .citem {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 15px;
+        background: var(--g0);
+        border-radius: 12px;
+        border: 1px solid rgba(184, 154, 46, 0.15);
+      }
+      .cavt {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: linear-gradient(145deg, var(--goldpale), var(--g2));
+        border: 1px solid rgba(184, 154, 46, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Great Vibes", cursive;
+        font-size: 1.2rem;
+        color: var(--gold);
+        flex-shrink: 0;
+      }
+      .cinfo {
+        flex: 1;
+      }
+      .crole {
+        font-family: "Cinzel", serif;
+        font-size: 0.58rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 2px;
+      }
+      .cname {
+        font-size: 0.95rem;
+        color: var(--txt);
+      }
+      .cacts {
+        display: flex;
+        gap: 7px;
+        flex-shrink: 0;
+      }
+      .cacts a {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--g0);
+        border: 1px solid rgba(184, 154, 46, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      .cacts a:hover {
+        background: var(--goldpale);
+      }
+      .cacts a svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      /* ════════════════════════════════
+   LOCATION
+════════════════════════════════ */
+      .loccard {
+        background: var(--g0);
+        border: 1px solid rgba(184, 154, 46, 0.18);
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      .locven {
+        font-family: "Cinzel", serif;
+        font-size: 0.92rem;
+        color: var(--txt);
+        margin-bottom: 8px;
+      }
+      .locaddr {
+        font-size: 0.86rem;
+        line-height: 1.8;
+        color: var(--txts);
+      }
+      .mapbtns {
+        display: flex;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      .mapbtn {
+        flex: 1;
+        padding: 11px;
+        border-radius: 8px;
+        border: 1px solid rgba(184, 154, 46, 0.3);
+        background: var(--w);
+        font-family: "Cinzel", serif;
+        font-size: 0.64rem;
+        letter-spacing: 0.1em;
+        color: var(--txt);
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition: all 0.22s;
+        font-family: inherit;
+      }
+      .mapbtn:hover {
+        background: var(--goldpale);
+      }
+      .mapbtn svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      /* ════════════════════════════════
+   CALENDAR
+════════════════════════════════ */
+      .caldisp {
+        background: linear-gradient(145deg, var(--goldpale), var(--g1));
+        border: 1px solid rgba(184, 154, 46, 0.25);
+        border-radius: 14px;
+        padding: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .calday {
+        font-family: "Cinzel", serif;
+        font-size: 0.66rem;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: var(--txtt);
+        margin-bottom: 3px;
+      }
+      .calnum {
+        font-family: "Cinzel", serif;
+        font-size: 3.6rem;
+        color: var(--gold);
+        line-height: 1;
+      }
+      .calmy {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: 1.05rem;
+        color: var(--txts);
+        margin-top: 3px;
+      }
+      .calbtns {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .calbtn {
+        padding: 12px 16px;
+        border-radius: 8px;
+        border: 1px solid rgba(184, 154, 46, 0.3);
+        background: var(--w);
+        font-family: "Cinzel", serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        color: var(--txt);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.22s;
+        text-decoration: none;
+        font-family: inherit;
+      }
+      .calbtn:hover {
+        background: var(--goldpale);
+      }
+      .calbtn svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* ════════════════════════════════
+   GIFT
+════════════════════════════════ */
+      .giftintr {
+        text-align: center;
+        font-style: italic;
+        color: var(--txts);
+        font-size: 0.88rem;
+        line-height: 1.75;
+        margin-bottom: 20px;
+      }
+      .qrbox {
+        width: 148px;
+        height: 148px;
+        border: 1.5px dashed rgba(184, 154, 46, 0.35);
+        border-radius: 10px;
+        margin: 0 auto 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--g0);
+        flex-direction: column;
+        gap: 5px;
+        color: var(--txtt);
+        font-size: 0.76rem;
+        text-align: center;
+        padding: 10px;
+      }
+      .qrbox svg {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 4px;
+      }
+      .bkcards {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .bkcard {
+        padding: 16px;
+        background: var(--g0);
+        border-radius: 11px;
+        border: 1px solid rgba(184, 154, 46, 0.18);
+      }
+      .bkn {
+        font-family: "Cinzel", serif;
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        color: var(--gold);
+        margin-bottom: 6px;
+      }
+      .bkacc {
+        font-size: 1.05rem;
+        letter-spacing: 0.07em;
+        color: var(--txt);
+        margin-bottom: 2px;
+      }
+      .bkhld {
+        font-size: 0.84rem;
+        color: var(--txts);
+      }
+      .cpybtn {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 9px;
+        padding: 7px 13px;
+        border: 1px solid rgba(184, 154, 46, 0.32);
+        border-radius: 16px;
+        background: var(--w);
+        font-family: "Cinzel", serif;
+        font-size: 0.6rem;
+        letter-spacing: 0.12em;
+        color: var(--txt);
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: inherit;
+      }
+      .cpybtn:hover {
+        background: var(--goldpale);
+      }
+      .cpybtn svg {
+        width: 12px;
+        height: 12px;
+      }
+
+      /* ════════════════════════════════
+   GALLERY LIGHTBOX
+════════════════════════════════ */
+      #glight {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9500;
+        background: rgba(250, 247, 240, 0.96);
+        backdrop-filter: blur(12px);
+        align-items: center;
+        justify-content: center;
+      }
+      #glight img {
+        max-width: 94vw;
+        max-height: 86dvh;
+        border-radius: 10px;
+        object-fit: contain;
+        box-shadow: 0 8px 40px rgba(184, 154, 46, 0.2);
+      }
+      #glcls {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--g0);
+        border: 1px solid var(--golddim);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #glcls svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      /* RESPONSIVE */
+      @media (min-width: 580px) {
+        .pover {
+          align-items: center;
+        }
+        .psheet {
+          border-radius: 18px;
+          max-height: 82dvh;
+          margin: 0 16px;
+          padding-bottom: 20px;
+        }
+        .inv-details {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 360px) {
+        .nb-lbl {
+          font-size: 0.44rem;
+          letter-spacing: 0.08em;
+        }
+        .nb-icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── MARBLE BG SVG VEINS ── -->
+    <div id="mbg">
+      <svg
+        style="position: absolute; width: 100%; height: 100%; opacity: 0.14"
+        viewBox="0 0 600 900"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M-10,150 Q120,110 230,155 T470,140 T620,175"
+          stroke="#b89a2e"
+          stroke-width="1.5"
+          fill="none"
+        />
+        <path
+          d="M-10,310 Q100,275 280,315 T560,290"
+          stroke="#b89a2e"
+          stroke-width="1"
+          fill="none"
+        />
+        <path
+          d="M150,0 Q165,180 145,360 Q125,540 158,720"
+          stroke="#b89a2e"
+          stroke-width="1"
+          fill="none"
+        />
+        <path
+          d="M450,0 Q465,180 440,360 Q415,540 448,720"
+          stroke="#b89a2e"
+          stroke-width=".8"
+          fill="none"
+        />
+        <path
+          d="M-10,500 Q160,462 310,505 T620,480"
+          stroke="#b89a2e"
+          stroke-width="1.2"
+          fill="none"
+        />
+        <path
+          d="M-10,680 Q180,645 340,682 T620,660"
+          stroke="#b89a2e"
+          stroke-width="1"
+          fill="none"
+        />
+        <path
+          d="M-10,840 Q140,810 290,845 T580,825"
+          stroke="#b89a2e"
+          stroke-width=".8"
+          fill="none"
+        />
+        <path
+          d="M300,0 Q318,200 295,400 Q272,600 305,800"
+          stroke="#b89a2e"
+          stroke-width=".7"
+          fill="none"
+        />
+      </svg>
+    </div>
+
+    <!-- ── FLORAL CORNERS ── -->
+    <!-- Same SVG floral for all corners (JS mirrors via CSS) -->
+    <div class="fc tl">
+      <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <path
+          d="M6,160 Q30,98 68,64 Q106,30 148,12"
+          stroke="#b89a2e"
+          stroke-width="1.3"
+          opacity=".6"
+        />
+        <path
+          d="M6,160 Q40,122 22,84 Q12,58 40,32"
+          stroke="#b89a2e"
+          stroke-width=".9"
+          opacity=".4"
+        />
+        <circle
+          cx="130"
+          cy="22"
+          r="12"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".8"
+        />
+        <circle
+          cx="130"
+          cy="22"
+          r="7.5"
+          fill="rgba(196,164,74,.28)"
+          stroke="#b89a2e"
+          stroke-width=".8"
+        />
+        <circle cx="130" cy="22" r="4" fill="rgba(196,164,74,.45)" />
+        <ellipse
+          cx="130"
+          cy="8"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(0,130,22)"
+        />
+        <ellipse
+          cx="143"
+          cy="17"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(72,130,22)"
+        />
+        <ellipse
+          cx="138"
+          cy="36"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(144,130,22)"
+        />
+        <ellipse
+          cx="119"
+          cy="36"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(216,130,22)"
+        />
+        <ellipse
+          cx="114"
+          cy="17"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(288,130,22)"
+        />
+        <circle
+          cx="68"
+          cy="66"
+          r="6"
+          fill="rgba(196,164,74,.25)"
+          stroke="#b89a2e"
+          stroke-width=".8"
+        />
+        <ellipse
+          cx="68"
+          cy="55"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(0,68,66)"
+        />
+        <ellipse
+          cx="79"
+          cy="63"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(60,68,66)"
+        />
+        <ellipse
+          cx="79"
+          cy="74"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(120,68,66)"
+        />
+        <ellipse
+          cx="68"
+          cy="77"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(180,68,66)"
+        />
+        <ellipse
+          cx="57"
+          cy="74"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(240,68,66)"
+        />
+        <ellipse
+          cx="57"
+          cy="63"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(300,68,66)"
+        />
+        <path
+          d="M48,96 Q32,74 44,60 Q53,76 48,96Z"
+          fill="rgba(130,160,90,.2)"
+          stroke="rgba(130,160,90,.4)"
+          stroke-width=".6"
+        />
+        <path
+          d="M86,50 Q102,32 94,20 Q86,38 86,50Z"
+          fill="rgba(130,160,90,.2)"
+          stroke="rgba(130,160,90,.4)"
+          stroke-width=".6"
+        />
+        <path
+          d="M24,132 Q10,112 20,100 Q32,114 24,132Z"
+          fill="rgba(130,160,90,.17)"
+          stroke="rgba(130,160,90,.35)"
+          stroke-width=".5"
+        />
+        <circle
+          cx="94"
+          cy="112"
+          r="2.5"
+          fill="rgba(196,164,74,.35)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+        />
+        <circle
+          cx="40"
+          cy="46"
+          r="2"
+          fill="rgba(196,164,74,.4)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+        />
+        <circle cx="22" cy="152" r="1.8" fill="rgba(196,164,74,.3)" />
+      </svg>
+    </div>
+    <div class="fc tr">
+      <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <path
+          d="M6,160 Q30,98 68,64 Q106,30 148,12"
+          stroke="#b89a2e"
+          stroke-width="1.3"
+          opacity=".6"
+        />
+        <path
+          d="M6,160 Q40,122 22,84 Q12,58 40,32"
+          stroke="#b89a2e"
+          stroke-width=".9"
+          opacity=".4"
+        />
+        <circle
+          cx="130"
+          cy="22"
+          r="12"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".8"
+        />
+        <circle
+          cx="130"
+          cy="22"
+          r="7.5"
+          fill="rgba(196,164,74,.28)"
+          stroke="#b89a2e"
+          stroke-width=".8"
+        />
+        <circle cx="130" cy="22" r="4" fill="rgba(196,164,74,.45)" />
+        <ellipse
+          cx="130"
+          cy="8"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(0,130,22)"
+        />
+        <ellipse
+          cx="143"
+          cy="17"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(72,130,22)"
+        />
+        <ellipse
+          cx="138"
+          cy="36"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(144,130,22)"
+        />
+        <ellipse
+          cx="119"
+          cy="36"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(216,130,22)"
+        />
+        <ellipse
+          cx="114"
+          cy="17"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(288,130,22)"
+        />
+        <circle
+          cx="68"
+          cy="66"
+          r="6"
+          fill="rgba(196,164,74,.25)"
+          stroke="#b89a2e"
+          stroke-width=".8"
+        />
+        <ellipse
+          cx="68"
+          cy="55"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(0,68,66)"
+        />
+        <ellipse
+          cx="79"
+          cy="63"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(60,68,66)"
+        />
+        <ellipse
+          cx="79"
+          cy="74"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(120,68,66)"
+        />
+        <ellipse
+          cx="68"
+          cy="77"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(180,68,66)"
+        />
+        <ellipse
+          cx="57"
+          cy="74"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(240,68,66)"
+        />
+        <ellipse
+          cx="57"
+          cy="63"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(300,68,66)"
+        />
+        <path
+          d="M48,96 Q32,74 44,60 Q53,76 48,96Z"
+          fill="rgba(130,160,90,.2)"
+          stroke="rgba(130,160,90,.4)"
+          stroke-width=".6"
+        />
+        <path
+          d="M86,50 Q102,32 94,20 Q86,38 86,50Z"
+          fill="rgba(130,160,90,.2)"
+          stroke="rgba(130,160,90,.4)"
+          stroke-width=".6"
+        />
+        <path
+          d="M24,132 Q10,112 20,100 Q32,114 24,132Z"
+          fill="rgba(130,160,90,.17)"
+          stroke="rgba(130,160,90,.35)"
+          stroke-width=".5"
+        />
+        <circle
+          cx="94"
+          cy="112"
+          r="2.5"
+          fill="rgba(196,164,74,.35)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+        />
+        <circle
+          cx="40"
+          cy="46"
+          r="2"
+          fill="rgba(196,164,74,.4)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+        />
+      </svg>
+    </div>
+    <div class="fc bl">
+      <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <path
+          d="M6,160 Q30,98 68,64 Q106,30 148,12"
+          stroke="#b89a2e"
+          stroke-width="1.3"
+          opacity=".6"
+        />
+        <path
+          d="M6,160 Q40,122 22,84 Q12,58 40,32"
+          stroke="#b89a2e"
+          stroke-width=".9"
+          opacity=".4"
+        />
+        <circle
+          cx="130"
+          cy="22"
+          r="12"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".8"
+        />
+        <circle
+          cx="130"
+          cy="22"
+          r="7.5"
+          fill="rgba(196,164,74,.28)"
+          stroke="#b89a2e"
+          stroke-width=".8"
+        />
+        <circle cx="130" cy="22" r="4" fill="rgba(196,164,74,.45)" />
+        <ellipse
+          cx="130"
+          cy="8"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(0,130,22)"
+        />
+        <ellipse
+          cx="143"
+          cy="17"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(72,130,22)"
+        />
+        <ellipse
+          cx="138"
+          cy="36"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(144,130,22)"
+        />
+        <ellipse
+          cx="119"
+          cy="36"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(216,130,22)"
+        />
+        <ellipse
+          cx="114"
+          cy="17"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(288,130,22)"
+        />
+        <circle
+          cx="68"
+          cy="66"
+          r="6"
+          fill="rgba(196,164,74,.25)"
+          stroke="#b89a2e"
+          stroke-width=".8"
+        />
+        <ellipse
+          cx="68"
+          cy="55"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(0,68,66)"
+        />
+        <ellipse
+          cx="79"
+          cy="63"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(60,68,66)"
+        />
+        <ellipse
+          cx="79"
+          cy="74"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(120,68,66)"
+        />
+        <ellipse
+          cx="68"
+          cy="77"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(180,68,66)"
+        />
+        <ellipse
+          cx="57"
+          cy="74"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(240,68,66)"
+        />
+        <ellipse
+          cx="57"
+          cy="63"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(300,68,66)"
+        />
+        <path
+          d="M48,96 Q32,74 44,60 Q53,76 48,96Z"
+          fill="rgba(130,160,90,.2)"
+          stroke="rgba(130,160,90,.4)"
+          stroke-width=".6"
+        />
+        <path
+          d="M24,132 Q10,112 20,100 Q32,114 24,132Z"
+          fill="rgba(130,160,90,.17)"
+          stroke="rgba(130,160,90,.35)"
+          stroke-width=".5"
+        />
+        <circle
+          cx="40"
+          cy="46"
+          r="2"
+          fill="rgba(196,164,74,.4)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+        />
+      </svg>
+    </div>
+    <div class="fc br">
+      <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <path
+          d="M6,160 Q30,98 68,64 Q106,30 148,12"
+          stroke="#b89a2e"
+          stroke-width="1.3"
+          opacity=".6"
+        />
+        <path
+          d="M6,160 Q40,122 22,84 Q12,58 40,32"
+          stroke="#b89a2e"
+          stroke-width=".9"
+          opacity=".4"
+        />
+        <circle
+          cx="130"
+          cy="22"
+          r="12"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".8"
+        />
+        <circle
+          cx="130"
+          cy="22"
+          r="7.5"
+          fill="rgba(196,164,74,.28)"
+          stroke="#b89a2e"
+          stroke-width=".8"
+        />
+        <circle cx="130" cy="22" r="4" fill="rgba(196,164,74,.45)" />
+        <ellipse
+          cx="130"
+          cy="8"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(0,130,22)"
+        />
+        <ellipse
+          cx="143"
+          cy="17"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(72,130,22)"
+        />
+        <ellipse
+          cx="138"
+          cy="36"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(144,130,22)"
+        />
+        <ellipse
+          cx="119"
+          cy="36"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(216,130,22)"
+        />
+        <ellipse
+          cx="114"
+          cy="17"
+          rx="4"
+          ry="7"
+          fill="rgba(196,164,74,.22)"
+          stroke="#b89a2e"
+          stroke-width=".6"
+          transform="rotate(288,130,22)"
+        />
+        <circle
+          cx="68"
+          cy="66"
+          r="6"
+          fill="rgba(196,164,74,.25)"
+          stroke="#b89a2e"
+          stroke-width=".8"
+        />
+        <ellipse
+          cx="68"
+          cy="55"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(0,68,66)"
+        />
+        <ellipse
+          cx="79"
+          cy="63"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(60,68,66)"
+        />
+        <ellipse
+          cx="79"
+          cy="74"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(120,68,66)"
+        />
+        <ellipse
+          cx="68"
+          cy="77"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(180,68,66)"
+        />
+        <ellipse
+          cx="57"
+          cy="74"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(240,68,66)"
+        />
+        <ellipse
+          cx="57"
+          cy="63"
+          rx="2.8"
+          ry="5"
+          fill="rgba(196,164,74,.2)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+          transform="rotate(300,68,66)"
+        />
+        <path
+          d="M86,50 Q102,32 94,20 Q86,38 86,50Z"
+          fill="rgba(130,160,90,.2)"
+          stroke="rgba(130,160,90,.4)"
+          stroke-width=".6"
+        />
+        <circle
+          cx="94"
+          cy="112"
+          r="2.5"
+          fill="rgba(196,164,74,.35)"
+          stroke="#b89a2e"
+          stroke-width=".5"
+        />
+      </svg>
+    </div>
+
+    <!-- ══════════════════════════════
+     INTRO — WHITE GOLD
+════════════════════════════════ -->
+    <div id="intro" onclick="openInvite()">
+      <!-- intro florals -->
+      <div class="ifl-tl">
+        <svg
+          viewBox="0 0 140 140"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+        >
+          <path
+            d="M4,140 Q26,86 60,56 Q94,26 132,10"
+            stroke="#b89a2e"
+            stroke-width="1.2"
+            opacity=".5"
+          />
+          <circle
+            cx="116"
+            cy="19"
+            r="11"
+            fill="rgba(196,164,74,.18)"
+            stroke="#b89a2e"
+            stroke-width=".8"
+          />
+          <circle cx="116" cy="19" r="7" fill="rgba(196,164,74,.25)" />
+          <ellipse
+            cx="116"
+            cy="6"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(0,116,19)"
+          />
+          <ellipse
+            cx="128"
+            cy="15"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(72,116,19)"
+          />
+          <ellipse
+            cx="123"
+            cy="32"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(144,116,19)"
+          />
+          <ellipse
+            cx="106"
+            cy="32"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(216,116,19)"
+          />
+          <ellipse
+            cx="101"
+            cy="15"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(288,116,19)"
+          />
+          <circle
+            cx="60"
+            cy="58"
+            r="5.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".7"
+          />
+          <ellipse
+            cx="60"
+            cy="48"
+            rx="2.5"
+            ry="4.5"
+            fill="rgba(196,164,74,.18)"
+            stroke="#b89a2e"
+            stroke-width=".5"
+            transform="rotate(0,60,58)"
+          />
+          <ellipse
+            cx="70"
+            cy="55"
+            rx="2.5"
+            ry="4.5"
+            fill="rgba(196,164,74,.18)"
+            stroke="#b89a2e"
+            stroke-width=".5"
+            transform="rotate(60,60,58)"
+          />
+          <ellipse
+            cx="70"
+            cy="65"
+            rx="2.5"
+            ry="4.5"
+            fill="rgba(196,164,74,.18)"
+            stroke="#b89a2e"
+            stroke-width=".5"
+            transform="rotate(120,60,58)"
+          />
+          <ellipse
+            cx="60"
+            cy="68"
+            rx="2.5"
+            ry="4.5"
+            fill="rgba(196,164,74,.18)"
+            stroke="#b89a2e"
+            stroke-width=".5"
+            transform="rotate(180,60,58)"
+          />
+          <ellipse
+            cx="50"
+            cy="65"
+            rx="2.5"
+            ry="4.5"
+            fill="rgba(196,164,74,.18)"
+            stroke="#b89a2e"
+            stroke-width=".5"
+            transform="rotate(240,60,58)"
+          />
+          <ellipse
+            cx="50"
+            cy="55"
+            rx="2.5"
+            ry="4.5"
+            fill="rgba(196,164,74,.18)"
+            stroke="#b89a2e"
+            stroke-width=".5"
+            transform="rotate(300,60,58)"
+          />
+          <path
+            d="M42,86 Q28,66 38,54 Q46,68 42,86Z"
+            fill="rgba(130,160,90,.18)"
+            stroke="rgba(130,160,90,.38)"
+            stroke-width=".5"
+          />
+          <path
+            d="M76,44 Q90,28 83,17 Q76,33 76,44Z"
+            fill="rgba(130,160,90,.18)"
+            stroke="rgba(130,160,90,.38)"
+            stroke-width=".5"
+          />
+        </svg>
+      </div>
+      <div class="ifl-tr">
+        <svg
+          viewBox="0 0 140 140"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+        >
+          <path
+            d="M4,140 Q26,86 60,56 Q94,26 132,10"
+            stroke="#b89a2e"
+            stroke-width="1.2"
+            opacity=".5"
+          />
+          <circle
+            cx="116"
+            cy="19"
+            r="11"
+            fill="rgba(196,164,74,.18)"
+            stroke="#b89a2e"
+            stroke-width=".8"
+          />
+          <circle cx="116" cy="19" r="7" fill="rgba(196,164,74,.25)" />
+          <ellipse
+            cx="116"
+            cy="6"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(0,116,19)"
+          />
+          <ellipse
+            cx="128"
+            cy="15"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(72,116,19)"
+          />
+          <ellipse
+            cx="123"
+            cy="32"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(144,116,19)"
+          />
+          <ellipse
+            cx="106"
+            cy="32"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(216,116,19)"
+          />
+          <ellipse
+            cx="101"
+            cy="15"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(288,116,19)"
+          />
+          <circle
+            cx="60"
+            cy="58"
+            r="5.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".7"
+          />
+          <path
+            d="M42,86 Q28,66 38,54 Q46,68 42,86Z"
+            fill="rgba(130,160,90,.18)"
+            stroke="rgba(130,160,90,.38)"
+            stroke-width=".5"
+          />
+        </svg>
+      </div>
+      <div class="ifl-bl">
+        <svg
+          viewBox="0 0 140 140"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+        >
+          <path
+            d="M4,140 Q26,86 60,56 Q94,26 132,10"
+            stroke="#b89a2e"
+            stroke-width="1.2"
+            opacity=".5"
+          />
+          <circle
+            cx="116"
+            cy="19"
+            r="11"
+            fill="rgba(196,164,74,.18)"
+            stroke="#b89a2e"
+            stroke-width=".8"
+          />
+          <circle cx="116" cy="19" r="7" fill="rgba(196,164,74,.25)" />
+          <ellipse
+            cx="116"
+            cy="6"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(0,116,19)"
+          />
+          <ellipse
+            cx="128"
+            cy="15"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(72,116,19)"
+          />
+          <ellipse
+            cx="138"
+            cy="36"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(144,116,19)"
+          />
+          <circle
+            cx="60"
+            cy="58"
+            r="5.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".7"
+          />
+          <path
+            d="M76,44 Q90,28 83,17 Q76,33 76,44Z"
+            fill="rgba(130,160,90,.18)"
+            stroke="rgba(130,160,90,.38)"
+            stroke-width=".5"
+          />
+        </svg>
+      </div>
+      <div class="ifl-br">
+        <svg
+          viewBox="0 0 140 140"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+        >
+          <path
+            d="M4,140 Q26,86 60,56 Q94,26 132,10"
+            stroke="#b89a2e"
+            stroke-width="1.2"
+            opacity=".5"
+          />
+          <circle
+            cx="116"
+            cy="19"
+            r="11"
+            fill="rgba(196,164,74,.18)"
+            stroke="#b89a2e"
+            stroke-width=".8"
+          />
+          <circle cx="116" cy="19" r="7" fill="rgba(196,164,74,.25)" />
+          <ellipse
+            cx="116"
+            cy="6"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(0,116,19)"
+          />
+          <ellipse
+            cx="101"
+            cy="15"
+            rx="3.5"
+            ry="6.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".6"
+            transform="rotate(288,116,19)"
+          />
+          <circle
+            cx="60"
+            cy="58"
+            r="5.5"
+            fill="rgba(196,164,74,.2)"
+            stroke="#b89a2e"
+            stroke-width=".7"
+          />
+        </svg>
+      </div>
+
+      <div class="ienv">
+        <div class="ienv-body">
+          <div class="ienv-sl"></div>
+          <div class="ienv-sr"></div>
+          <div class="ienv-tp"></div>
+          <div class="ienv-seal">S&J</div>
+        </div>
+      </div>
+      <div class="inames">Sarah &amp; James</div>
+      <div class="isub">You Are Cordially Invited</div>
+      <div class="itap">▾ &nbsp; Tap to Open &nbsp; ▾</div>
+    </div>
+
+    <!-- ── MUSIC BTN ── -->
+    <button id="musicbtn" onclick="toggleMusic()" aria-label="Toggle music">
+      <!-- note-off (default) -->
+      <svg
+        class="note-off"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M9 18V5l12-2v13" />
+        <circle cx="6" cy="18" r="3" />
+        <circle cx="18" cy="16" r="3" />
+      </svg>
+      <!-- note-on (playing) -->
+      <svg
+        class="note-on"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="var(--gold)"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M9 18V5l12-2v13" />
+        <circle cx="6" cy="18" r="3" fill="rgba(184,154,46,.2)" />
+        <circle cx="18" cy="16" r="3" fill="rgba(184,154,46,.2)" />
+        <path
+          d="M20 5l2-1M22 8l1.5-1"
+          stroke="var(--gold)"
+          stroke-width="1.2"
+        />
+      </svg>
+    </button>
+    <audio id="bgm" loop preload="auto">
+      <source
+        src="Asset/Chainsaw Man_ Reze Arc OST - in the pool (Piano)  Kensuke Ushio.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+
+    <!-- ══════════════════════════════
+     GALLERY LIGHTBOX
+════════════════════════════════ -->
+    <div id="glight" onclick="closeGL()">
+      <button id="glcls" onclick="closeGL()">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="glimg" src="" alt="" />
+    </div>
+
+    <!-- ══════════════════════════════
+     MAIN PAGE
+════════════════════════════════ -->
+    <div id="page">
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-orn">✦ &nbsp; Walimatulurus &nbsp; ✦</div>
+        <div class="hero-names">
+          Sarah<span class="hero-amp">&amp;</span>James
+        </div>
+        <div class="hero-tagline">Saturday · 20 September 2025</div>
+        <div class="hero-venue">The Grand Ballroom, Ritz-Carlton · Jakarta</div>
+      </div>
+
+      <!-- COUNTDOWN -->
+      <div class="rule"><span>◆</span></div>
+      <div class="cds">
+        <div class="cds-lbl">Counting Down</div>
+        <div class="cds-row">
+          <div class="cds-box">
+            <span class="cds-n" id="cdd">00</span
+            ><span class="cds-u">Days</span>
+          </div>
+          <div class="cds-box">
+            <span class="cds-n" id="cdh">00</span
+            ><span class="cds-u">Hours</span>
+          </div>
+          <div class="cds-box">
+            <span class="cds-n" id="cdm">00</span
+            ><span class="cds-u">Mins</span>
+          </div>
+          <div class="cds-box">
+            <span class="cds-n" id="cds2">00</span
+            ><span class="cds-u">Secs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- INVITATION CARD -->
+      <div class="rule"><span>❧</span></div>
+      <div class="inv-card">
+        <div class="inv-greet">
+          Bismillahirrahmanirrahim<br />Assalamu'alaikum Warahmatullahi
+          Wabarakatuh
+        </div>
+        <div class="inv-parents">
+          <em>Mr. &amp; Mrs. Robert Anderson</em> &nbsp;·&nbsp;
+          <em>Mr. &amp; Mrs. David Hartley</em>
+        </div>
+        <div class="inv-intro">
+          With full gratitude to the Almighty, we joyfully invite you to the
+          wedding reception of
+        </div>
+        <div class="inv-sep"><span>—</span></div>
+        <span class="inv-bride">Sarah Elizabeth Anderson</span>
+        <span class="inv-amp-big">&amp;</span>
+        <span class="inv-groom">James William Hartley</span>
+        <div class="inv-sep" style="margin-top: 16px"><span>—</span></div>
+        <div class="inv-details">
+          <div class="inv-det">
+            <span class="inv-det-lbl">Date</span>
+            <span class="inv-det-val">Saturday<br />20 September 2025</span>
+          </div>
+          <div class="inv-det">
+            <span class="inv-det-lbl">Time</span>
+            <span class="inv-det-val">11:00 AM<br />– 5:00 PM</span>
+          </div>
+          <div class="inv-det inv-detail-full">
+            <span class="inv-det-lbl">Venue</span>
+            <span class="inv-det-val"
+              >The Grand Ballroom, Ritz-Carlton<br />Jl. DR. Ide Anak Agung Gde
+              Agung, Jakarta</span
+            >
+          </div>
+        </div>
+        <div class="pdiv" style="margin: 18px 0 14px"></div>
+        <div class="prog-lbl">Programme</div>
+        <table class="prog-t">
+          <tr>
+            <td>11:00 AM</td>
+            <td>Arrival &amp; Registration</td>
+          </tr>
+          <tr>
+            <td>11:30 AM</td>
+            <td>Ceremony Begins</td>
+          </tr>
+          <tr>
+            <td>12:30 PM</td>
+            <td>Lunch &amp; Reception</td>
+          </tr>
+          <tr>
+            <td>2:00 PM</td>
+            <td>Bride &amp; Groom Entrance</td>
+          </tr>
+          <tr>
+            <td>5:00 PM</td>
+            <td>Majlis Berakhir</td>
+          </tr>
+        </table>
+        <p class="inv-close-txt">
+          We humbly request your presence &amp; prayers to bless this union.
+        </p>
+      </div>
+
+      <!-- GALLERY -->
+      <div class="rule"><span>◆</span></div>
+      <div class="gal-lbl">Our Gallery</div>
+      <div class="gal-grid">
+        <div
+          class="gal-item"
+          onclick="
+            openGL(
+              'https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80"
+            loading="lazy"
+            alt=""
+          />
+        </div>
+        <div
+          class="gal-item"
+          onclick="
+            openGL(
+              'https://images.unsplash.com/photo-1529636798458-92182e662485?w=900&q=80',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=400&q=80"
+            loading="lazy"
+            alt=""
+          />
+        </div>
+        <div
+          class="gal-item"
+          onclick="
+            openGL(
+              'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=900&q=80',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400&q=80"
+            loading="lazy"
+            alt=""
+          />
+        </div>
+        <div
+          class="gal-item"
+          onclick="
+            openGL(
+              'https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=900&q=80',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=400&q=80"
+            loading="lazy"
+            alt=""
+          />
+        </div>
+        <div
+          class="gal-item"
+          onclick="
+            openGL(
+              'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=900&q=80',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&q=80"
+            loading="lazy"
+            alt=""
+          />
+        </div>
+        <div
+          class="gal-item"
+          onclick="
+            openGL(
+              'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=900&q=80',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&q=80"
+            loading="lazy"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="rule" style="margin-top: 28px"><span>✦</span></div>
+      <div class="pfooter">
+        <div class="pfooter-hash">#SarahAndJames2025</div>
+        <div class="pfooter-script">With Love ♡</div>
+      </div>
+    </div>
+    <!-- /page -->
+
+    <!-- ══════════════════════════════
+     BOTTOM NAVBAR
+════════════════════════════════ -->
+    <nav id="bnav">
+      <!-- RSVP -->
+      <button class="nb-item" onclick="openP('pRSVP')" aria-label="RSVP">
+        <div class="nb-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#1a150a"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            width="22"
+            height="22"
+          >
+            <path
+              d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z"
+            />
+            <path d="M22 6l-10 7L2 6" />
+          </svg>
+        </div>
+        <span class="nb-lbl">RSVP</span>
+      </button>
+      <!-- GUESTBOOK -->
+      <button class="nb-item" onclick="openP('pGuest')" aria-label="Guestbook">
+        <div class="nb-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#1a150a"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            width="22"
+            height="22"
+          >
+            <path d="M12 20h9" />
+            <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+          </svg>
+        </div>
+        <span class="nb-lbl">Wishes</span>
+      </button>
+      <!-- CONTACT -->
+      <button class="nb-item" onclick="openP('pContact')" aria-label="Contact">
+        <div class="nb-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#1a150a"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            width="22"
+            height="22"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+            />
+          </svg>
+        </div>
+        <span class="nb-lbl">Contact</span>
+      </button>
+      <!-- LOCATION -->
+      <button class="nb-item" onclick="openP('pLoc')" aria-label="Location">
+        <div class="nb-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#1a150a"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            width="22"
+            height="22"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+        </div>
+        <span class="nb-lbl">Location</span>
+      </button>
+      <!-- CALENDAR -->
+      <button class="nb-item" onclick="openP('pCal')" aria-label="Calendar">
+        <div class="nb-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#1a150a"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            width="22"
+            height="22"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+        </div>
+        <span class="nb-lbl">Calendar</span>
+      </button>
+      <!-- GIFT -->
+      <button class="nb-item" onclick="openP('pGift')" aria-label="Gift">
+        <div class="nb-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#1a150a"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            width="22"
+            height="22"
+          >
+            <polyline points="20 12 20 22 4 22 4 12" />
+            <rect x="2" y="7" width="20" height="5" />
+            <path d="M12 22V7" />
+            <path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z" />
+            <path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" />
+          </svg>
+        </div>
+        <span class="nb-lbl">Gift</span>
+      </button>
+    </nav>
+
+    <!-- ══════════════════════════════
+     POPUP: RSVP
+════════════════════════════════ -->
+    <div class="pover" id="pRSVP" onclick="ocl(event, 'pRSVP')">
+      <div class="psheet">
+        <div class="phdl"></div>
+        <div class="pinner">
+          <button class="pcls" onclick="closeP('pRSVP')">✕</button>
+          <div class="ptitle">RSVP</div>
+          <div class="psubt">Will you be attending?</div>
+          <div class="pdiv"></div>
+          <div class="rtog">
+            <button id="yBtn" class="rtbtn active" onclick="setAtt(true)">
+              ✓ &nbsp; Attending
+            </button>
+            <button id="nBtn" class="rtbtn" onclick="setAtt(false)">
+              ✗ &nbsp; Not Attending
+            </button>
+          </div>
+          <div class="ff">
+            <label>Full Name</label
+            ><input type="text" id="rn" placeholder="Your full name" />
+          </div>
+          <div class="ff">
+            <label>Phone Number</label
+            ><input type="tel" id="rp" placeholder="+60 12-345 6789" />
+          </div>
+          <div id="rext">
+            <div class="fr2">
+              <div class="ff">
+                <label>No. of Guests</label
+                ><select id="rg">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                </select>
+              </div>
+              <div class="ff">
+                <label>Children (6–17)</label
+                ><select id="rk">
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="bgold" onclick="subRSVP()">Send RSVP</button>
+          <div class="smsg" id="rsmsg">
+            🎉 Thank you! Your RSVP has been received.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     POPUP: GUESTBOOK
+════════════════════════════════ -->
+    <div class="pover" id="pGuest" onclick="ocl(event, 'pGuest')">
+      <div class="psheet">
+        <div class="phdl"></div>
+        <div class="pinner">
+          <button class="pcls" onclick="closeP('pGuest')">✕</button>
+          <div class="ptitle">Guestbook</div>
+          <div class="psubt">Leave your heartfelt wishes</div>
+          <div class="pdiv"></div>
+          <div id="glist"></div>
+          <div class="ff">
+            <label>Your Name</label
+            ><input type="text" id="gn" placeholder="Your name" />
+          </div>
+          <div class="ff">
+            <label>Message &amp; Wishes</label
+            ><textarea
+              id="gm"
+              placeholder="Write your wishes here..."
+            ></textarea>
+          </div>
+          <button class="bgold" onclick="subGuest()">Send Wishes</button>
+          <div class="smsg" id="gsmsg">
+            💌 Your wishes have been received. Thank you!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     POPUP: CONTACT
+════════════════════════════════ -->
+    <div class="pover" id="pContact" onclick="ocl(event, 'pContact')">
+      <div class="psheet">
+        <div class="phdl"></div>
+        <div class="pinner">
+          <button class="pcls" onclick="closeP('pContact')">✕</button>
+          <div class="ptitle">Contact</div>
+          <div class="psubt">Get in touch with us</div>
+          <div class="pdiv"></div>
+          <div class="clist">
+            <div class="citem">
+              <div class="cavt">S</div>
+              <div class="cinfo">
+                <div class="crole">Bride</div>
+                <div class="cname">Sarah Anderson</div>
+              </div>
+              <div class="cacts">
+                <a
+                  href="https://wa.me/60123456789"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
+                    />
+                  </svg>
+                </a>
+                <a href="tel:+60123456789" aria-label="Call">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="citem">
+              <div class="cavt">J</div>
+              <div class="cinfo">
+                <div class="crole">Groom</div>
+                <div class="cname">James Hartley</div>
+              </div>
+              <div class="cacts">
+                <a
+                  href="https://wa.me/60198765432"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
+                    /></svg
+                ></a>
+                <a href="tel:+60198765432" aria-label="Call"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+            <div class="citem">
+              <div class="cavt">L</div>
+              <div class="cinfo">
+                <div class="crole">Bride's Mother</div>
+                <div class="cname">Mrs. Linda Anderson</div>
+              </div>
+              <div class="cacts">
+                <a
+                  href="https://wa.me/60111111111"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
+                    /></svg
+                ></a>
+                <a href="tel:+60111111111" aria-label="Call"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+            <div class="citem">
+              <div class="cavt">D</div>
+              <div class="cinfo">
+                <div class="crole">Groom's Father</div>
+                <div class="cname">Mr. David Hartley</div>
+              </div>
+              <div class="cacts">
+                <a
+                  href="https://wa.me/60122222222"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
+                    /></svg
+                ></a>
+                <a href="tel:+60122222222" aria-label="Call"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     POPUP: LOCATION
+════════════════════════════════ -->
+    <div class="pover" id="pLoc" onclick="ocl(event, 'pLoc')">
+      <div class="psheet">
+        <div class="phdl"></div>
+        <div class="pinner">
+          <button class="pcls" onclick="closeP('pLoc')">✕</button>
+          <div class="ptitle">Location</div>
+          <div class="psubt">We'll be waiting for you here</div>
+          <div class="pdiv"></div>
+          <div class="loccard">
+            <div class="locven">
+              The Grand Ballroom<br />Ritz-Carlton Jakarta
+            </div>
+            <div class="locaddr">
+              Jl. DR. Ide Anak Agung Gde Agung Kav. E.1.1 No.1<br />Kuningan,
+              Jakarta Selatan 12950
+            </div>
+            <div class="mapbtns">
+              <a
+                class="mapbtn"
+                href="https://maps.google.com/?q=Ritz-Carlton+Jakarta"
+                target="_blank"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Google Maps
+              </a>
+              <a
+                class="mapbtn"
+                href="https://waze.com/ul?q=Ritz+Carlton+Jakarta"
+                target="_blank"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4l3 3" />
+                </svg>
+                Waze
+              </a>
+            </div>
+          </div>
+          <div
+            style="
+              border-radius: 10px;
+              overflow: hidden;
+              border: 1px solid rgba(184, 154, 46, 0.2);
+            "
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4!2d106.8297!3d-6.2209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3ef1c73bb01%3A0x9ab5000abb!2sThe+Ritz-Carlton+Jakarta!5e0!3m2!1sen!2sid!4v1"
+              width="100%"
+              height="200"
+              style="border: 0; display: block"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     POPUP: CALENDAR
+════════════════════════════════ -->
+    <div class="pover" id="pCal" onclick="ocl(event, 'pCal')">
+      <div class="psheet">
+        <div class="phdl"></div>
+        <div class="pinner">
+          <button class="pcls" onclick="closeP('pCal')">✕</button>
+          <div class="ptitle">Add to Calendar</div>
+          <div class="psubt">Don't forget the date!</div>
+          <div class="pdiv"></div>
+          <div class="caldisp">
+            <div class="calday">Saturday</div>
+            <div class="calnum">20</div>
+            <div class="calmy">September 2025</div>
+            <div
+              style="
+                font-family: &quot;Cinzel&quot;, serif;
+                font-size: 0.62rem;
+                letter-spacing: 0.2em;
+                color: var(--txtt);
+                margin-top: 8px;
+              "
+            >
+              11:00 AM – 5:00 PM
+            </div>
+          </div>
+          <div class="calbtns">
+            <a
+              class="calbtn"
+              href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Wedding+of+Sarah+%26+James&dates=20250920T110000/20250920T170000&details=You+are+cordially+invited&location=Ritz-Carlton+Jakarta&sf=true&output=xml"
+              target="_blank"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              Add to Google Calendar
+            </a>
+            <button class="calbtn" onclick="dlICS()">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              Add to Apple Calendar (.ics)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     POPUP: GIFT
+════════════════════════════════ -->
+    <div class="pover" id="pGift" onclick="ocl(event, 'pGift')">
+      <div class="psheet">
+        <div class="phdl"></div>
+        <div class="pinner">
+          <button class="pcls" onclick="closeP('pGift')">✕</button>
+          <div class="ptitle">Money Gift</div>
+          <div class="psubt">A blessing from the heart</div>
+          <div class="pdiv"></div>
+          <p class="giftintr">
+            Your presence is the greatest gift. However, if you wish to bless
+            our new journey further, the details below are available.
+          </p>
+          <div class="qrbox">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            >
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+              <rect x="14" y="14" width="3" height="3" />
+              <rect x="18" y="18" width="3" height="3" />
+              <rect x="14" y="18" width="3" height="3" />
+              <rect x="18" y="14" width="3" height="3" />
+            </svg>
+            <span style="font-size: 0.72rem; color: var(--txtt)"
+              >Your QR Code<br />goes here</span
+            >
+          </div>
+          <div class="bkcards">
+            <div class="bkcard">
+              <div class="bkn">Bank BCA</div>
+              <div class="bkacc">1234 · 5678 · 90</div>
+              <div class="bkhld">Sarah Elizabeth Anderson</div>
+              <button class="cpybtn" onclick="cpy('1234567890', 'cs1')">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                  <path
+                    d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+                  />
+                </svg>
+                Copy Account Number
+              </button>
+              <div
+                class="smsg"
+                id="cs1"
+                style="margin-top: 7px; padding: 9px 12px"
+              >
+                ✓ Copied to clipboard!
+              </div>
+            </div>
+            <div class="bkcard">
+              <div class="bkn">Bank Mandiri</div>
+              <div class="bkacc">0987 · 6543 · 21</div>
+              <div class="bkhld">James William Hartley</div>
+              <button class="cpybtn" onclick="cpy('0987654321', 'cs2')">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                  <path
+                    d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+                  />
+                </svg>
+                Copy Account Number
+              </button>
+              <div
+                class="smsg"
+                id="cs2"
+                style="margin-top: 7px; padding: 9px 12px"
+              >
+                ✓ Copied to clipboard!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /* ── INTRO ── */
+      function openInvite() {
+        document.getElementById("intro").classList.add("hide");
+        setTimeout(() => document.getElementById("intro").remove(), 900);
+        const m = document.getElementById("bgm");
+        m.volume = 0.3;
+        m.play()
+          .then(() => {
+            mOn = true;
+            document.getElementById("musicbtn").classList.add("playing");
+          })
+          .catch(() => {});
+      }
+
+      /* ── MUSIC ── */
+      let mOn = false;
+      function toggleMusic() {
+        const m = document.getElementById("bgm"),
+          b = document.getElementById("musicbtn");
+        if (mOn) {
+          m.pause();
+          b.classList.remove("playing");
+          mOn = false;
+        } else {
+          if (m.currentTime === 0) {
+            m.currentTime = 3;
+          }
+          m.play();
+          b.classList.add("playing");
+          mOn = true;
+        }
+      }
+
+      /* ── COUNTDOWN ── */
+      const wd = new Date("2026-09-20T11:00:00");
+      function tick() {
+        const diff = wd - new Date();
+        if (diff <= 0) {
+          ["cdd", "cdh", "cdm", "cds2"].forEach(
+            (i) => (document.getElementById(i).textContent = "00"),
+          );
+          return;
+        }
+        document.getElementById("cdd").textContent = String(
+          Math.floor(diff / 86400000),
+        ).padStart(2, "0");
+        document.getElementById("cdh").textContent = String(
+          Math.floor((diff % 86400000) / 3600000),
+        ).padStart(2, "0");
+        document.getElementById("cdm").textContent = String(
+          Math.floor((diff % 3600000) / 60000),
+        ).padStart(2, "0");
+        document.getElementById("cds2").textContent = String(
+          Math.floor((diff % 60000) / 1000),
+        ).padStart(2, "0");
+      }
+      tick();
+      setInterval(tick, 1000);
+
+      /* ── POPUP ── */
+      function openP(id) {
+        document.getElementById(id).classList.add("open");
+        document.body.style.overflow = "hidden";
+        if (id === "pGuest") renderG();
+        // highlight nav item
+        document
+          .querySelectorAll(".nb-item")
+          .forEach((b) => b.classList.remove("active"));
+      }
+      function closeP(id) {
+        document.getElementById(id).classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      function ocl(e, id) {
+        if (e.target === document.getElementById(id)) closeP(id);
+      }
+
+      /* ── RSVP ── */
+      let att = true;
+      function setAtt(v) {
+        att = v;
+        document.getElementById("yBtn").classList.toggle("active", v);
+        document.getElementById("nBtn").classList.toggle("active", !v);
+        document.getElementById("rext").style.display = v ? "" : "none";
+      }
+      function subRSVP() {
+        const n = document.getElementById("rn").value.trim(),
+          p = document.getElementById("rp").value.trim();
+        if (!n || !p) {
+          alert("Please enter your name and phone number.");
+          return;
+        }
+        document.getElementById("rsmsg").classList.add("show");
+        document.getElementById("rn").value = "";
+        document.getElementById("rp").value = "";
+      }
+
+      /* ── GUESTBOOK ── */
+      const DEFS = [
+        {
+          name: "Auntie Rose",
+          msg: "May Allah bless this union with endless love and joy. Wishing you both a lifetime of happiness!",
+          time: "2 hours ago",
+        },
+        {
+          name: "The Johnson Family",
+          msg: "Congratulations! You are so perfect for each other — so happy to witness this beautiful love story!",
+          time: "5 hours ago",
+        },
+        {
+          name: "Uncle Michael",
+          msg: "Two souls, one heart. May your journey together overflow with laughter and love always.",
+          time: "Yesterday",
+        },
+      ];
+      function renderG() {
+        const s = JSON.parse(localStorage.getItem("wg") || "[]");
+        document.getElementById("glist").innerHTML = [...s, ...DEFS]
+          .map(
+            (e) =>
+              `<div class="gcard"><div class="gntag">${e.name}</div><div class="gmsg">"${e.msg}"</div><div class="gtim">${e.time}</div></div>`,
+          )
+          .join("");
+      }
+      function subGuest() {
+        const n = document.getElementById("gn").value.trim(),
+          m = document.getElementById("gm").value.trim();
+        if (!n || !m) {
+          alert("Please fill in your name and message.");
+          return;
+        }
+        const s = JSON.parse(localStorage.getItem("wg") || "[]");
+        s.unshift({ name: n, msg: m, time: "Just now" });
+        localStorage.setItem("wg", JSON.stringify(s));
+        renderG();
+        document.getElementById("gsmsg").classList.add("show");
+        document.getElementById("gn").value = "";
+        document.getElementById("gm").value = "";
+      }
+
+      /* ── COPY ── */
+      function cpy(txt, sid) {
+        navigator.clipboard
+          .writeText(txt)
+          .then(() => {
+            const e = document.getElementById(sid);
+            e.style.display = "block";
+            e.classList.add("show");
+            setTimeout(() => {
+              e.style.display = "none";
+              e.classList.remove("show");
+            }, 2600);
+          })
+          .catch(() => alert("Account: " + txt));
+      }
+
+      /* ── ICS ── */
+      function dlICS() {
+        const t =
+          "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Wedding//EN\nBEGIN:VEVENT\nDTSTART:20250920T110000\nDTEND:20250920T170000\nSUMMARY:Wedding of Sarah & James\nLOCATION:The Grand Ballroom Ritz-Carlton Jakarta\nDESCRIPTION:You are cordially invited\nEND:VEVENT\nEND:VCALENDAR";
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(new Blob([t], { type: "text/calendar" }));
+        a.download = "sarah-james.ics";
+        a.click();
+      }
+
+      /* ── GALLERY ── */
+      function openGL(src) {
+        const l = document.getElementById("glight");
+        document.getElementById("glimg").src = src;
+        l.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+      function closeGL() {
+        document.getElementById("glight").style.display = "none";
+        document.body.style.overflow = "";
+      }
+
+      /* ── SWIPE DOWN TO CLOSE ── */
+      let sy = 0;
+      document.querySelectorAll(".psheet").forEach((s) => {
+        s.addEventListener(
+          "touchstart",
+          (e) => {
+            sy = e.touches[0].clientY;
+          },
+          { passive: true },
+        );
+        s.addEventListener(
+          "touchend",
+          (e) => {
+            if (e.changedTouches[0].clientY - sy > 80) {
+              const o = s.closest(".pover");
+              if (o) closeP(o.id);
+            }
+          },
+          { passive: true },
+        );
+      });
+    </script>
+  </body>
+</html>
