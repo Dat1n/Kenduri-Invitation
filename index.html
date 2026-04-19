@@ -2746,9 +2746,27 @@
             <td>Sila sahkan kehadiran anda melalui butang di bawah</td>
           </tr>
         </table>
+        <div class="prog-lbl" style="margin-top: 18px">Aturcara Majlis</div>
+        <table class="prog-t">
+          <tr>
+            <td>4:00 PM</td>
+            <td>Ketibaan jemputan</td>
+          </tr>
+          <tr>
+            <td>4:10 PM</td>
+            <td>Doa &amp; Majlis bermula</td>
+          </tr>
+          <tr>
+            <td>5:00 PM</td>
+            <td>Berkenalan dgn jemputan</td>
+          </tr>
+          <tr>
+            <td>7:00 PM</td>
+            <td>Majlis tamat</td>
+          </tr>
+        </table>
         <p class="inv-close-txt">Terima kasih atas doa dan sokongan anda.</p>
       </div>
-
       <!-- GALLERY -->
       <div class="rule"><span>◆</span></div>
       <div class="gal-lbl">Our Gallery</div>
@@ -3137,7 +3155,7 @@
             <div class="mapbtns">
               <a
                 class="mapbtn"
-                href="https://maps.google.com/?q=LANTERA+VENUE+CAHAYA+SPK+CLUB+SHAH+ALAM"
+                href="https://maps.app.goo.gl/KceRY5am4XW4HNra7"
                 target="_blank"
               >
                 <svg
@@ -3155,7 +3173,7 @@
               </a>
               <a
                 class="mapbtn"
-                href="https://waze.com/ul?q=Ritz+Carlton+Jakarta"
+                href="https://www.waze.com/live-map/directions/my/selangor/shah-alam/lantera-venue?to=place.ChIJ85tPkcZRzDERO1mfOjtZiP8&from=ll.3.08189859%2C101.497304&utm_medium=lm_share_directions&utm_campaign=default&utm_source=waze_website"
                 target="_blank"
               >
                 <svg
@@ -3334,6 +3352,23 @@
           mOn = true;
         }
       }
+
+      function stopMusicOnHide() {
+        const m = document.getElementById("bgm");
+        const b = document.getElementById("musicbtn");
+        if (m && !m.paused) {
+          m.pause();
+          if (b) b.classList.remove("playing");
+          mOn = false;
+        }
+      }
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stopMusicOnHide();
+      });
+
+      window.addEventListener("pagehide", stopMusicOnHide);
+      window.addEventListener("blur", stopMusicOnHide);
 
       /* ── COUNTDOWN ── */
       const wd = new Date("2026-05-16T16:00:00+08:00");
