@@ -2718,11 +2718,11 @@
         <div class="inv-details">
           <div class="inv-det">
             <span class="inv-det-lbl">Tarikh</span>
-            <span class="inv-det-val">16/5/26</span>
+            <span class="inv-det-val"><strong>16/5/26</strong></span>
           </div>
           <div class="inv-det">
             <span class="inv-det-lbl">Hari</span>
-            <span class="inv-det-val">Sabtu</span>
+            <span class="inv-det-val"><strong>Sabtu</strong></span>
           </div>
           <div class="inv-det inv-detail-full">
             <span class="inv-det-lbl">Masa</span>
@@ -2743,7 +2743,7 @@
         <table class="prog-t">
           <tr>
             <td>RSVP</td>
-            <td>Sila sahkan kehadiran anda melalui butang di bawah</td>
+            <td>Sila sahkan kehadiran anda melalui butang di bawah sebelum 5 Mei 2026</td>
           </tr>
         </table>
         <div class="prog-lbl" style="margin-top: 18px">Aturcara Majlis</div>
@@ -3414,47 +3414,54 @@
         if (e.target === document.getElementById(id)) closeP(id);
       }
 
-      /* ── RSVP ── */
+   /* ── RSVP ── */
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbzwBJz55dFImC_TFy238dOeNXwr7VStx_BlybYIbD2ObzcszZioy1Vvzdw1LxlaZyo-LA/exec";
+
 let att = true;
+
 function setAtt(v) {
   att = v;
-  document.getElementById("yBtn").classList.toggle("active", v);
-  document.getElementById("nBtn").classList.toggle("active", !v);
-  document.getElementById("rext").style.display = v ? "" : "none";
+  document.getElementById('yBtn').classList.toggle('active', v);
+  document.getElementById('nBtn').classList.toggle('active', !v);
+  document.getElementById('rext').style.display = v ? '' : 'none';
 }
+
 function subRSVP() {
-  const n = document.getElementById("rn").value.trim();
-  const p = document.getElementById("rp").value.trim();
-  const g = document.getElementById("rg").value;
+  const n = document.getElementById('rn').value.trim();
+  const p = document.getElementById('rp').value.trim();
+  const g = att ? document.getElementById('rg').value : '-';
 
   if (!n || !p) {
-    alert("Please enter your name and phone number.");
+    alert('Please enter your name and phone number.');
     return;
   }
 
-  const btn = document.querySelector("#pRSVP .bgold");
-  btn.textContent = "Sending...";
+  const btn = document.querySelector('#pRSVP .bgold');
+  btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  emailjs.send("service_zw1use9", "template_e4juwns", {
-    type: "New RSVP",
-    name: n,
-    phone: p,
-    attending: att ? "Attending" : "Not Attending",
-    guests: att ? g : "0",
-    message: att ? "Will be attending the wedding." : "Will not be attending.",
+  // use no-cors to avoid CORS hang — faster response
+  fetch(SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: n,
+      phone: p,
+      attending: att ? 'Yes' : 'No',
+      guests: g
+    })
   })
   .then(() => {
-    document.getElementById("rsmsg").classList.add("show");
-    document.getElementById("rn").value = "";
-    document.getElementById("rp").value = "";
-    btn.textContent = "Send RSVP";
+    document.getElementById('rsmsg').classList.add('show');
+    document.getElementById('rn').value = '';
+    document.getElementById('rp').value = '';
+    btn.textContent = 'Send RSVP';
     btn.disabled = false;
   })
-  .catch((err) => {
-    alert("Failed to send. Please try again.");
-    console.error(err);
-    btn.textContent = "Send RSVP";
+  .catch(() => {
+    alert('Failed to send. Please try again.');
+    btn.textContent = 'Send RSVP';
     btn.disabled = false;
   });
 }
