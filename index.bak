@@ -180,19 +180,9 @@
         width: clamp(180px, 48vw, 250px);
         height: clamp(126px, 34vw, 175px);
         margin-bottom: 36px;
-        animation: ienvFadeIn 1.5s ease-out forwards, ifl 3.2s ease-in-out 1.5s infinite;
+        animation: ifl 3.2s ease-in-out infinite;
         filter: drop-shadow(0 12px 32px rgba(184, 154, 46, 0.22))
           drop-shadow(0 4px 10px rgba(184, 154, 46, 0.15));
-      }
-      @keyframes ienvFadeIn {
-        from {
-          opacity: 0;
-          transform: scale(0.9) translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1) translateY(0);
-        }
       }
       @keyframes ifl {
         0%,
@@ -283,10 +273,10 @@
         position: relative;
         z-index: 1;
         font-family: "Great Vibes", cursive;
-        font-size: clamp(2.4rem, 7vw, 3rem);
+        font-size: clamp(1.9rem, 7vw, 3rem);
         color: var(--gold);
         text-align: center;
-        margin-bottom: 9px;
+        margin-bottom: 6px;
         text-shadow: 0 1px 8px rgba(184, 154, 46, 0.2);
       }
       .isub {
@@ -294,7 +284,7 @@
         z-index: 1;
         font-family: "Cinzel", serif;
         color: var(--txts);
-        font-size: 0.9rem;
+        font-size: clamp(0.58rem, 0.8vw, 0.75rem);
         letter-spacing: 0.4em;
         text-transform: uppercase;
         text-align: center;
@@ -305,18 +295,8 @@
         z-index: 1;
         font-family: "Cinzel", serif;
         color: var(--goldf);
-        font-size: 0.9rem;
+        font-size: 0.66rem;
         letter-spacing: 0.32em;
-        text-transform: uppercase;
-        animation: itb 1.7s ease-in-out infinite;
-      }
-      .tarikh {
-        position: relative;
-        z-index: 1;
-        font-family: "Cinzel", serif;
-        color: var(--white);
-        font-size: 2rem;
-        letter-spacing: 0.20em;
         text-transform: uppercase;
         animation: itb 1.7s ease-in-out infinite;
       }
@@ -452,18 +432,12 @@
         display: block;
         font-family: "Cormorant Garamond", serif;
         font-style: italic;
-        font-size: clamp(1.5rem, 3.5vw, 1.6rem);
+        font-size: clamp(1rem, 3.5vw, 1.6rem);
         background: linear-gradient(135deg, #9a7a30, #c8a840);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         margin: 2px 0;
-      }
-      /* Override to make ampersand white */
-      .hero-amp {
-        color: #ffffff;
-        -webkit-text-fill-color: #ffffff;
-        background: none;
       }
       .hero-tagline {
         margin-top: 20px;
@@ -475,7 +449,7 @@
         background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(6px);
         color: var(--gold);
-        font-size: clamp(0.82rem, 1.1vw, 0.78rem);
+        font-size: clamp(0.62rem, 1.1vw, 0.78rem);
         letter-spacing: 0.22em;
         text-transform: uppercase;
       }
@@ -1443,34 +1417,6 @@
         height: 14px;
       }
 
-      /* Base styles for the text */
-      .invitation-container {
-        padding: 40px;
-        text-align: center;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.4);
-      }
-
-
-      /* Delaying each line slightly for a "staggered" elegant feel */
-      .inames:first-of-type { animation-delay: 0.1s; }
-      .hero-amp { animation-delay: 2.3s; }
-      .inames:last-of-type { animation-delay: 2.8s; }
-      .isub { animation-delay: 3.3s; }
-      .itap { animation-delay: 3.8s; }
-
-      /* The Animation Keyframes */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
       /* RESPONSIVE */
       @media (min-width: 580px) {
         .pover {
@@ -1494,47 +1440,6 @@
         .nb-icon {
           width: 20px;
           height: 20px;
-        }
-      }
-
-
-
- .inames,
-.hero-amp,
-.isub,
-.itap,
-.tarikh {
-  color: #ffffff;
-  opacity: 0;
-  animation: fadeInUp 2s ease-out forwards;
-
-  /* Black outline */
-  -webkit-text-stroke: 1px #00000049;
-
-}
-
-      /* The Animation Keyframes */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-
-      /* The Animation Keyframes */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
         }
       }
     </style>
@@ -2316,18 +2221,10 @@
 ════════════════════════════════ -->
     <div id="intro" onclick="openInvite()">
       
-   <!-- BUTTERFLY BACKGROUND VIDEO -->
-<video 
-  id="bgVideo"
-  autoplay
-  loop 
-  muted 
-  playsinline
-  webkit-playsinline
-  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 1; pointer-events: none;">
-  <source src="Asset/Butterfly.mp4" type="video/mp4">
-</video>
-
+        <!-- BUTTERFLY BACKGROUND VIDEO -->
+      <video autoplay loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 100; pointer-events: none;">
+        <source src="" type="video/mp4">
+      </video>
 
       <!-- intro florals -->
       <div class="ifl-tl">
@@ -2697,17 +2594,11 @@
           <div class="ienv-seal">H&A</div>
         </div>
       </div>
-      <div class="invitation-container">
-        <div class="inames">Burhanuddin Hilmi</div>
-        <span class="hero-amp">&amp;</span>
-        <div class="inames">Umi Atiqah</div>
-        <div class="isub">You Are Cordially Invited</div>
-        <div class="tarikh">16 MEI 2026</div>
-        <div class="itap">bersamaan</div>
-        <div class="itap">28 zulkaedah 1447H</div>
-        </div><div>
-        <div class="itap">▾ &nbsp; Tap to Open &nbsp; ▾</div>
-      </div>
+       <div class="inames">Burhanuddin Hilmi</div>
+      <span class="hero-amp">&amp;</span>
+      <div class="inames">Umi Atiqah</div>
+      <div class="isub">You Are Cordially Invited</div>
+      <div class="itap">▾ &nbsp; Tap to Open &nbsp; ▾</div>
     </div>
 
     <!-- ── MUSIC BTN ── -->
@@ -2746,7 +2637,7 @@
         />
       </svg>
     </button>
-    <audio id="bgm" loop preload="auto" autoplay>
+    <audio id="bgm" loop preload="auto">
       <source
         src="Asset\song.mp4"
         type="audio/mp4"
@@ -3587,7 +3478,8 @@ function subRSVP() {
     btn.disabled = false;
   });
 }
-      /* ── GUESTBOOK ── */
+
+/* ── GUESTBOOK ── */
 function renderG() {
   const s = JSON.parse(localStorage.getItem('wg') || '[]');
   document.getElementById('glist').innerHTML = s.map(e => `
