@@ -1318,91 +1318,6 @@
         height: 16px;
       }
 
-      /* ════════════════════════════════
-   GIFT
-════════════════════════════════ */
-      .giftintr {
-        text-align: center;
-        font-style: italic;
-        color: var(--txts);
-        font-size: 0.88rem;
-        line-height: 1.75;
-        margin-bottom: 20px;
-      }
-      .qrbox {
-        width: 148px;
-        height: 148px;
-        border: 1.5px dashed rgba(184, 154, 46, 0.35);
-        border-radius: 10px;
-        margin: 0 auto 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--g0);
-        flex-direction: column;
-        gap: 5px;
-        color: var(--txtt);
-        font-size: 0.76rem;
-        text-align: center;
-        padding: 10px;
-      }
-      .qrbox svg {
-        width: 32px;
-        height: 32px;
-        margin-bottom: 4px;
-      }
-      .bkcards {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .bkcard {
-        padding: 16px;
-        background: var(--g0);
-        border-radius: 11px;
-        border: 1px solid rgba(184, 154, 46, 0.18);
-      }
-      .bkn {
-        font-family: "Cinzel", serif;
-        font-size: 0.65rem;
-        letter-spacing: 0.15em;
-        color: var(--gold);
-        margin-bottom: 6px;
-      }
-      .bkacc {
-        font-size: 1.05rem;
-        letter-spacing: 0.07em;
-        color: var(--txt);
-        margin-bottom: 2px;
-      }
-      .bkhld {
-        font-size: 0.84rem;
-        color: var(--txts);
-      }
-      .cpybtn {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        margin-top: 9px;
-        padding: 7px 13px;
-        border: 1px solid rgba(184, 154, 46, 0.32);
-        border-radius: 16px;
-        background: var(--w);
-        font-family: "Cinzel", serif;
-        font-size: 0.6rem;
-        letter-spacing: 0.12em;
-        color: var(--txt);
-        cursor: pointer;
-        transition: all 0.2s;
-        font-family: inherit;
-      }
-      .cpybtn:hover {
-        background: var(--goldpale);
-      }
-      .cpybtn svg {
-        width: 12px;
-        height: 12px;
-      }
 
       /* ════════════════════════════════
    GALLERY LIGHTBOX
@@ -3082,29 +2997,7 @@
         </div>
         <span class="nb-lbl">Calendar</span>
       </button>
-      <!-- GIFT -->
-      <button class="nb-item" onclick="openP('pGift')" aria-label="Gift">
-        <div class="nb-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#1a150a"
-            stroke-width="1.6"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            width="22"
-            height="22"
-          >
-            <polyline points="20 12 20 22 4 22 4 12" />
-            <rect x="2" y="7" width="20" height="5" />
-            <path d="M12 22V7" />
-            <path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z" />
-            <path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" />
-          </svg>
-        </div>
-        <span class="nb-lbl">Gift</span>
-      </button>
-    </nav>
+     
 
     <!-- ══════════════════════════════
      POPUP: RSVP
@@ -3387,45 +3280,6 @@
               </svg>
               Add to Apple Calendar
             </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══════════════════════════════
-     POPUP: GIFT
-════════════════════════════════ -->
-    <div class="pover" id="pGift" onclick="ocl(event, 'pGift')">
-      <div class="psheet">
-        <div class="phdl"></div>
-        <div class="pinner">
-          <button class="pcls" onclick="closeP('pGift')">✕</button>
-          <div class="ptitle">Money Gift</div>
-          <div class="psubt">A blessing from the heart</div>
-          <div class="pdiv"></div>
-          <p class="giftintr">
-            Your presence is the greatest gift. However, if you wish to bless
-            our new journey further, the details below are available.
-          </p>
-          <div class="qrbox">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            >
-              <rect x="3" y="3" width="7" height="7" />
-              <rect x="14" y="3" width="7" height="7" />
-              <rect x="3" y="14" width="7" height="7" />
-              <rect x="14" y="14" width="3" height="3" />
-              <rect x="18" y="18" width="3" height="3" />
-              <rect x="14" y="18" width="3" height="3" />
-              <rect x="18" y="14" width="3" height="3" />
-            </svg>
-            <span style="font-size: 0.72rem; color: var(--txtt)"
-              >Your QR Code<br />goes here</span
-            >
           </div>
         </div>
       </div>
