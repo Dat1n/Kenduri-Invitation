@@ -848,6 +848,10 @@
         color: var(--gold);
       }
 
+       .rsvp-btn .nb-lbl {
+        font-weight: bold;
+      }
+
       /* ════════════════════════════════
    POPUP SYSTEM
 ════════════════════════════════ */
@@ -2897,27 +2901,6 @@
      BOTTOM NAVBAR
 ════════════════════════════════ -->
     <nav id="bnav">
-      <!-- RSVP -->
-      <button class="nb-item" onclick="openP('pRSVP')" aria-label="RSVP">
-        <div class="nb-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#1a150a"
-            stroke-width="1.6"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            width="22"
-            height="22"
-          >
-            <path
-              d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z"
-            />
-            <path d="M22 6l-10 7L2 6" />
-          </svg>
-        </div>
-        <span class="nb-lbl">RSVP</span>
-      </button>
       <!-- GUESTBOOK -->
       <button class="nb-item" onclick="openP('pGuest')" aria-label="Guestbook">
         <div class="nb-icon">
@@ -2957,6 +2940,32 @@
         </div>
         <span class="nb-lbl">Contact</span>
       </button>
+      <!-- RSVP -->
+    <button class="nb-item rsvp-btn" onclick="openP('pRSVP')" aria-label="RSVP">
+  <div class="nb-icon" style="position:relative;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#1a150a" stroke-width="1.6"
+      stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+      <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z"/>
+      <path d="M22 6l-10 7L2 6"/>
+    </svg>
+    <!-- Red pulsing dot -->
+    <span style="
+      position:absolute; top:-4px; right:-4px;
+      width:10px; height:10px;
+      background:#e53e3e; border-radius:50%;
+      animation: pulse 1.5s infinite;
+    "></span>
+  </div>
+  <span class="nb-lbl">RSVP</span>
+</button>
+
+<style>
+@keyframes pulse {
+  0%   { transform: scale(1);   opacity: 1; }
+  50%  { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+</style>
       <!-- LOCATION -->
       <button class="nb-item" onclick="openP('pLoc')" aria-label="Location">
         <div class="nb-icon">
